@@ -1,0 +1,94 @@
+img { border: none; }
+input, select, textarea, th, td { font-size: 1em; }
+
+/* CSS Tree menu styles */
+ol.tree
+{
+    padding: 0 0 0 30px;
+    width: 300px;
+}
+ #li-tree
+{ 
+    position: relative; 
+    margin-left: -15px;
+    list-style: none;
+}
+#li-tree.file
+{
+    margin-left: -1px !important;
+}
+#li-tree .file a
+{
+    background: url(skin/document.png) 0 0 no-repeat;
+    color: #fff;
+    padding-left: 21px;
+    text-decoration: none;
+    display: block;
+}
+#li-tree.file a[href *= '.pdf']   { background: url(skin/document.png) 0 0 no-repeat; }
+#li-tree.file a[href *= '.html']  { background: url(skin/document.png) 0 0 no-repeat; }
+#li-tree.file a[href $= '.css']   { background: url(skin/document.png) 0 0 no-repeat; }
+#li-tree.file a[href $= '.js']    { background: url(skin/document.png) 0 0 no-repeat; }
+#li-tree input
+{
+    position: absolute;
+    left: 0;
+    margin-left: 0;
+    opacity: 0;
+    z-index: 2;
+    cursor: pointer;
+    height: 1em;
+    width: 1em;
+    top: 0;
+}
+#li-tree input + ol
+{
+    background: url(skin/toggle-small-expand.png) 40px 0px no-repeat;
+    margin: -0.938em 0 0 -44px; /* 15px */
+    height: 1em;
+}
+#li-tree input + ol > #li-tree { display: none; margin-left: -14px !important; padding-left: 1px; }
+#li-tree label
+{
+    background: url(skin/folder-horizontal.png) 15px 1px no-repeat;
+    cursor: pointer;
+    display: block;
+    padding-left: 37px;
+}
+
+#li-tree input:checked + ol
+{
+    background: url(skin/toggle-small.png) 40px 5px no-repeat;
+    margin: -1.25em 0 0 -44px; /* 20px */
+    padding: 1.563em 0 0 80px;
+    height: auto;
+}
+#li-tree input:checked + ol > #li-tree { display: block; margin: 0 0 0.125em;  /* 2px */}
+#li-tree input:checked + ol > #li-tree:last-child { margin: 0 0 0.063em; /* 1px */ }
+
+input,td{
+  text-transform:uppercase; 
+}
+.cabecera{
+
+    border-left: 6px solid #222D32;
+    padding: 5px;
+
+}
+.well{
+    padding-right: 20px;
+        padding-left: 20px;
+
+    padding-top: 20px;
+
+}
+.form-group{
+    margin-top: -18px;
+}
+.col-sm-4 {
+    background-color: #222D32;
+    color: #868e96;
+}
+.resultados{
+    background-color: #f9f9f9; 
+}
