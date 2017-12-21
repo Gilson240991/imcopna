@@ -23,8 +23,8 @@ function mostrarDatosEventos(valorBuscar,pagina){
     //  console.log(response);
       filas ="";
       $.each(response.eventos,function(key,item){
-        filas+="<tr style='background-color:#fff'><td>"+item.IDent_Evento+"</td><td>"+item.Titulo+"</td><td>"+item.Descripcion+"</td><td>"+item.Fecha+"</td><td>"+item.IDent_002_Estado+"</td><td>"+item.IDent_Categoria+"</td><td><img src='"+base_img(item.Imagen)+"' class='estilo_imagen'></td>"+
-        "<td><a href='#' data-toggle='modal' data-target='#modalEditar' class='btn btn-success btn-sm' onclick='detallePersona("+item.IDent_Persona+")'>Editar</button></td><td><a type='button' class='btn btn-danger btn-sm' onclick='deletes("+item.IDent_Persona+")'>Eliminar</button></td>"+
+        filas+="<tr style='background-color:#fff'><td class='text-center'>"+item.IDent_Evento+"</td><td>"+item.Titulo+"</td><td class='text-center'><i style='color:#77E46D;font-weight:bold' class='fa fa-check-circle' aria-hidden='true'></i></td><td class='text-center'><i style='color:#ccc;font-weight:bold' class='fa fa-star' aria-hidden='true'></i></td><td class='text-center'>"+item.IDent_004_Categoria+"</td><td class='text-center'>"+item.Usuario_creacion+"</td><td class='text-center'>"+item.Fecha_creacion+"</td><td class='text-center'>"+item.Vistos+"</td>"+
+        "<td class='text-center'><a href='#' data-toggle='modal' data-target='#modalEditar' onclick='detallePersona("+item.IDent_Persona+")'><i style='color:#222D32;font-weight:bold;' class='fa fa-pencil-square-o' aria-hidden='true'></i></a></td><td class='text-center'><a onclick='deletes("+item.IDent_Persona+")'><i style='color:red;font-weight:bold;' class='fa fa-trash-o' aria-hidden='true'></i></a></td>"+
         "</tr>";
       });
       $('#tbeventos').html(filas);

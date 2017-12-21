@@ -34,13 +34,14 @@
             <tr class="info" style="font-weight:bold">
             <th style="width: 2% ">N°</th>
             <th style="width: 15% ">Título</th>
-            <th style="width: 15%">Descripción</th>
-            <th style="width: 5%">Fecha</th>
-            <th style="width: 6%">Estado</th>
-            <th style="width: 6%">Categoría</th>
-            <th style="width:2%">Imagen</th>
-            <th style="width:2%;">Editar</th>
-            <th style="width:2%;">Eliminar</th>
+            <th class="text-center" style="width: 0.5%">Estado</th>
+            <th class="text-center" style="width: 1%">Destacado</th>
+            <th class="text-center" style="width: 6%">Categoría</th>
+            <th class='text-center' style="width: 5%">Creado por</th>
+            <th class="text-center" style="width:2%">Fecha</th>
+             <th class="text-center" style="width:2%">Veces visto</th>
+            <th class="text-center" style="width:1%;">Editar</th>
+            <th class="text-center" style="width:1%;">Eliminar</th>
               </tr>
           </thead>
 
