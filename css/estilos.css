@@ -98,3 +98,18 @@
 .estilo_imagen{
   width: 100px;
 }
+
+i{
+ color: #000;
+ font-weight: bold;
+}
+.tab-content{
+  padding: 15px;
+  border: 1px solid #eee;
+}
+.well-sm{
+  background-color: #E3E3E3;
+}
+.well-alert{
+  padding: 5px;
+}

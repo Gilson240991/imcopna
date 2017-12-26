@@ -1,7 +1,7 @@
 <footer class="sticky-footer">
 	<div class="container">
 		<div class="text-center">
-			<small>Copyright © Todos los derechos reservados</small>
+			<small>Todos los derechos reservados © Copyright BITE Consulting - 2017</small>
 		</div>
 	</div>
 </footer>
@@ -27,28 +27,8 @@
 		</div>
 	</div>
 </div>
-<!-- Bootstrap core JavaScript-->
-<script type='text/javascript' src="<?php echo base_url('vendor/jquery/jquery.min.js') ?>"></script>
-<script type='text/javascript' src="<?php echo base_url('vendor/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
 <script type='text/javascript' src="<?php echo base_url('js/sb-admin.min.js') ?>"></script>
-<script type='text/javascript' src="<?php echo base_url('vendor/jquery-easing/jquery.easing.min.js') ?>"></script>
-<script type='text/javascript' src="<?php echo base_url('js/usuario.js'); ?>"></script>
-<script type='text/javascript' src="<?php echo base_url('js/eventos.js'); ?>"></script>
 
 
-<!-- Custom scripts for this page-->
-<!-- Toggle between fixed and static navbar-->
-<script>
-$('#toggleNavPosition').click(function() {
-$('body').toggleClass('fixed-nav');
-$('nav').toggleClass('fixed-top static-top');
-});
-</script>
-<!-- Toggle between dark and light navbar-->
-<script>
-$('#toggleNavColor').click(function() {
-$('nav').toggleClass('navbar-dark navbar-light');
-$('nav').toggleClass('bg-dark bg-light');
-$('body').toggleClass('bg-dark bg-light');
-});
-</script>
+
+

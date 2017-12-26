@@ -83,13 +83,15 @@ function insertEventos($evento){
 	$this->db->insert('eventos',$evento);
 }
 
-function insertUsuario($usuario){
-	return $this->db->insert('usuario',$usuario);
-
-}
 function deleteEvento($id){
 	$this->db->where('IDent_Evento', $id);
 	return $this->db->delete('eventos');
+}
+
+function Obtener($id){
+		$this->db->where('IDent_Evento', $id);
+		$publicacion = $this->db->get('eventos')->row();
+		return $publicacion;
 }
 
 }

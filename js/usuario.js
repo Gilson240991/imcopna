@@ -1,19 +1,19 @@
 $(document).ready(main);
 function main(){
-    mostrarDatos("",1);
+    mostrarDatosUsuarios("",1);
     $("input[name=txtBuscar]").keyup(function(){
       textobuscar =$(this).val();
-      mostrarDatos(textobuscar,1);
+      mostrarDatosUsuarios(textobuscar,1);
     });
     $("body").on("click",".paginacion li a",function(e){
       e.preventDefault();
       valorhref=$(this).attr("href");
       valorBuscar=$("input[name=textoBuscar]").val();
-      mostrarDatos(valorBuscar,valorhref);
+      mostrarDatosUsuarios(valorBuscar,valorhref);
     });
 
 }
-function mostrarDatos(valorBuscar,pagina){
+function mostrarDatosUsuarios(valorBuscar,pagina){
   $.ajax({
     url:base_url('usuario/mostrar'),
     type:"POST",
@@ -23,8 +23,8 @@ function mostrarDatos(valorBuscar,pagina){
     //  console.log(response);
       filas ="";
       $.each(response.personas,function(key,item){
-        filas+="<tr style='background-color:#fff'><td>"+item.IDent_Persona+"</td><td>"+item.Dni+"</td><td>"+item.Nombre+"</td><td>"+item.Paterno+"</td><td>"+item.Materno+"</td><td>"+item.Correo+"</td><td><a href='#' data-toggle='modal' data-target='#modalUsuario' class='btn btn-success btn-sm' onclick='mostrarUsuario("+item.IDent_Persona+")'>Usuario</a></td>"+
-        "<td><a href='#' data-toggle='modal' data-target='#modalEditar' class='btn btn-success btn-sm' onclick='detallePersona("+item.IDent_Persona+")'>Editar</button></td><td><a type='button' class='btn btn-danger btn-sm' onclick='deletes("+item.IDent_Persona+")'>Eliminar</button></td>"+
+        filas+="<tr style='background-color:#fff'><td>"+item.IDent_Persona+"</td><td>"+item.Dni+"</td><td>"+item.Nombre+"</td><td>"+item.Paterno+"</td><td>"+item.Materno+"</td><td>"+item.Correo+"</td><td class='text-center'><a href='#' data-toggle='modal' data-target='#modalUsuario' onclick='mostrarUsuario("+item.IDent_Persona+")'><i class='fa fa-user-o'></i></a></td>"+
+        "<td class='text-center'><a href='#' data-toggle='modal' data-target='#modalEditar'  onclick='detallePersona("+item.IDent_Persona+")'><i class='fa fa-pencil-square-o'></i></a></td><td class='text-center'><a href='#' onclick='deletes("+item.IDent_Persona+")'><i class='fa fa-trash'></i></a></td>"+
         "</tr>";
       });
       $('#tbpersona').html(filas);
@@ -141,7 +141,7 @@ function update(){
     success:function(data){
      if(data.estado){
         alert('Se actualizaron los datos correctamente');
-        mostrarDatos("",1);
+        mostrarDatosUsuarios("",1);
         $('#closeupdate').click();
         
       }else{
@@ -179,7 +179,7 @@ function insert(){
           limpiarcampos(Nombre,campos);
 
         }
-        mostrarDatos("",1);
+        mostrarDatosUsuarios("",1);
       }else{
         alert('Atencion hubo un error');
       }
@@ -187,15 +187,6 @@ function insert(){
   });
 }
 
-function limpiarcampos(focus,campos){
-
-  $.each(campos, function(key,item){
-    if("0"==key){
-      $("#"+item).focus();
-    }
-    $("#"+item).val("");
-  });
-}
 
 function deletes(id){
 var opcion = confirm("¿Realmente desea eliminar esta persona?");
@@ -208,7 +199,7 @@ if(opcion){
     success:function(data){
      if(data.estado){
         //alert('Se elimino correctamente la persona');
-        mostrarDatos("",1);
+        mostrarDatosUsuarios("",1);
       }else{
         alert('Atencion hubo un error');
       }

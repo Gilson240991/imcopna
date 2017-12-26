@@ -1,6 +1,6 @@
 $(document).ready(mainEventos);
 function mainEventos(){
-    mostrarDatosEventos("",1);
+    mostrarDatosEventos(" ",1);
     $("input[name=txtBuscarEventos]").keyup(function(){
       textobuscar =$(this).val();
       mostrarDatosEventos(textobuscar,1);
@@ -77,4 +77,18 @@ function mostrarDatosEventos(valorBuscar,pagina){
         $(".paginacion").html(paginador);
     }
   });
+}
+
+function grabarevento(){
+  var titulo = $('#titulo').val();
+  var descripcion =$('#descripcion').val();
+
+   $.ajax({
+    url:base_url('eventos/grabar'),
+    type:"POST",
+    dataType:"json",
+    data:{titulo:titulo,descripcion:descripcion},
+    success:function(data){
+      
+    }
 }

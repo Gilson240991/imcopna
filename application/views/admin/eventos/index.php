@@ -1,3 +1,4 @@
+<script type='text/javascript' src="<?php echo base_url('js/eventos.js'); ?>"></script>
 <div class="content-wrapper">
 	<div class="container-fluid">
 		<!-- Breadcrumbs-->
@@ -22,13 +23,13 @@
 		<br>
 		<div class="row">
 			<div class="col-sm-2">
-				<a href='#' name="btnAgregarEventos" class="btn btn-success btn-block" data-toggle='modal' data-target='#modalInsertar'>Agregar</a>
+				<a href='<?php echo base_url("admin/eventos/viewregistrar"); ?>'  class="btn btn-success btn-block" >Agregar</a>
 			</div>
 		</div>
 		<br>
 		  <div class="row">
     <div class="col-sm-12">
-      <table class="table table-hover table-bordered table-sm">
+      <table class="table  table-sm">
 
           <thead class="thead-dark">
             <tr class="info" style="font-weight:bold">
@@ -39,7 +40,7 @@
             <th class="text-center" style="width: 6%">Categoría</th>
             <th class='text-center' style="width: 5%">Creado por</th>
             <th class="text-center" style="width:2%">Fecha</th>
-             <th class="text-center" style="width:2%">Veces visto</th>
+             <th class="text-center" style="width:2%">Visto</th>
             <th class="text-center" style="width:1%;">Editar</th>
             <th class="text-center" style="width:1%;">Eliminar</th>
               </tr>

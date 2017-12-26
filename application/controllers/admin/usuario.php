@@ -9,6 +9,11 @@ class Usuario extends CI_Controller {
 
   public function index(){
     $data['persona']=$this->usu->listarDatosPersona($this->session->userdata('usuario'));
+    //tipos de estados
+	$data['tipo_estado']=$this->par->mostrarParametroDetalle(1);
+	//tipos de usuarios
+	$data['tipo_usuarios']=$this->par->mostrarParametroDetalle(14);
+	
     $this->load->view('admin/guest/header');
     $this->load->view('admin/guest/nav',$data);
 	$this->load->view('admin/usuario/usuario');

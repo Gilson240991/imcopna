@@ -26,4 +26,12 @@ class Eventos extends CI_Controller {
     echo json_encode($data);
   }
 
+  public function viewregistrar($id = 0){
+  	$data['persona']=$this->usu->listarDatosPersona($this->session->userdata('usuario'));
+
+    $this->load->view('admin/guest/header');
+    $this->load->view('admin/guest/nav',$data);
+	  $this->load->view('admin/eventos/registro',array('model'=> $id > 0 ? $this->eve->Obtener($id) : null));
+    $this->load->view('admin/guest/footer');
+  }
 }
